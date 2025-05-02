@@ -1,0 +1,114 @@
+This is a youtube video of my project (I am Gursahib Singh). And I want to put this on my project section of my website:
+Fetch time stamps of the screenshots(also provide what should I name them (.png)) that I should get from this video, to show on my website and also write the content nicely formatted to show on my website. try to FETCH and Cover all FEATURES.
+
+---
+
+Project Creation Guide for Gursahib Singh's Portfolio
+About Me
+I'm Gursahib Singh, a Bachelor of Computing Science student at Thompson Rivers University. My portfolio showcases projects in AI, machine learning, web development, and mobile applications. Each project demonstrates my technical skills, problem-solving approach, and commitment to building innovative solutions.
+Technical File Structure Requirements
+Each project in my portfolio needs to follow these technical specifications:
+1. File Naming and Location
+Create a single .tsx file named after the project's slug (e.g., my-project.tsx)
+Place it in the data/project-data/ directory
+2. Required Exports
+Metadata
+typescriptexport const metadata = {
+  title: "Your Project Title",
+  category: "Gen AI" | "Web Apps" | "Mobile Apps" | "ML/DL", // Choose one
+  tags: ["React", "TypeScript", "Other Relevant Technologies"],
+  image: "URL or path to featured image",
+  demoUrl: "https://demo-link.example.com", 
+  githubUrl: "https://github.com/username/repo" 
+};
+Table of Contents
+This powers the top navigation - feel free to create as many sections as needed:
+typescriptexport const tableOfContents = [
+  { id: "overview", title: "Project Overview" },
+  { id: "technical-details", title: "Technical Details" },
+  // Add any sections that best tell the project's story
+];
+Default Export Component
+The main content should be a React functional component:
+typescriptexport default function ProjectNameHere() {
+  return (
+    <>
+      {/* Content sections here - create as many as needed */}
+    </>
+  );
+}
+3. Section Structure Template
+Each section should follow this basic pattern for proper styling:
+jsx<section id="section-id" className="mb-20">
+  <h2 className="text-3xl font-bold mb-6">Section Title</h2>
+
+  {/* Content is completely flexible - use paragraphs, images, code blocks,
+      feature lists, diagrams, or any elements that best showcase the project */}
+</section>
+4. Available Component Patterns
+Below are some component patterns you can use, but feel free to create additional layouts or modify these as needed:
+Basic Content Block
+jsx<p className="mb-6">
+  Your paragraph text here...
+</p>
+Feature List
+jsx<div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
+  <h3 className="text-xl font-bold mb-4">List Title</h3>
+  <ul className="space-y-2">
+    <li className="flex items-center gap-2">
+      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+      <span>List item</span>
+    </li>
+    {/* More items as needed */}
+  </ul>
+</div>
+Image with Text
+jsx<div className="grid md:grid-cols-2 gap-8 items-center mb-6">
+  <div className="relative aspect-video rounded-xl overflow-hidden">
+    <img
+      src="image-url-here.jpg"
+      alt="Image description"
+      className="object-cover"
+    />
+  </div>
+  <div>
+    <h3 className="text-2xl font-bold mb-4">Optional Title</h3>
+    <p>
+      Text content here
+    </p>
+  </div>
+</div>
+Code Example
+jsx<div className="rounded-xl bg-secondary/30 p-6 border border-border/50">
+  <pre className="language-typescript"><code>{`
+// Your code example here
+function exampleFunction() {
+  // Implementation details
+  return result;
+}
+  `}</code></pre>
+</div>
+Info Card
+jsx<div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
+  <h4 className="text-xl font-bold mb-2">Card Title</h4>
+  <p className="text-muted-foreground">Card content</p>
+</div>
+5. Project Card Registration
+After creating the project file, add it to the project-cards.tsx file in the data/project-data/ directory:
+typescript{
+  slug: "your-project-slug",
+  title: "Your Project Title",
+  excerpt: "A brief 1-2 sentence description of the project",
+  category: "Gen AI", // Choose from: "Gen AI" | "Web Apps" | "Mobile Apps" | "ML/DL"
+  tags: ["Tag1", "Tag2", "Tag3"],
+  image: "URL or path to featured image"
+}
+Content Creation Guidelines
+I'm looking for comprehensive, engaging project write-ups that truly showcase my work. Please:
+Create any sections needed to best tell the project's story - don't feel limited to standard sections
+Go into depth on technical details, challenges, and solutions
+Include varied content types - text explanations, code snippets, visual elements, architecture diagrams
+Tell a complete story from problem identification through solution and results
+Highlight my technical skills through specific examples and implementation details
+Show my problem-solving approach by explaining decisions and tradeoffs
+The most important thing is creating an engaging, comprehensive showcase of each project that demonstrates both technical excellence and effective communication. The technical structure requirements ensure compatibility with my portfolio system, but the content itself should be as creative and thorough as possible.

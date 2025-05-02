@@ -1,0 +1,137 @@
+# Blog Creation Guide for Gursahib Singh's Portfolio
+
+## About Me
+I'm Gursahib Singh, a Bachelor of Computing Science student at Thompson Rivers University. I'm passionate about AI, machine learning, privacy-preserving technologies, and creating innovative solutions. I write blogs about my research, latest tech trends, and experiences in the field of computer science and AI.
+
+## Blog File Structure Requirements
+
+Each blog post in my portfolio is created as a React component in a TypeScript file. Please follow this structure precisely:
+
+### 1. File Naming and Location
+- Create a single .tsx file named after the blog's slug (e.g., `my-blog-post.tsx`)
+- Place it in the `data/blog-data/` directory
+
+### 2. Required Exports
+
+#### Metadata
+```typescript
+export const metadata = {
+  title: "Your Blog Title Here",
+  date: "YYYY-MM-DD",
+  tags: ["Tag1", "Tag2", "Tag3"],
+  image: "URL or path to featured image"
+};
+```
+
+#### Table of Contents
+This powers the sidebar navigation:
+```typescript
+export const tableOfContents = [
+  { id: "section-id-1", title: "Section Title 1" },
+  { id: "section-id-2", title: "Section Title 2" },
+  // Add all major sections
+];
+```
+
+#### Default Export Component
+The main content should be a React functional component:
+```typescript
+export default function BlogNameHere() {
+  return (
+    <>
+      {/* Content sections here */}
+    </>
+  );
+}
+```
+
+### 3. Content Structure
+
+Follow this pattern for each section:
+```jsx
+<section id="section-id-1" className="mb-24">
+  <h2 className="text-4xl font-bold tracking-tight mb-8">Section Title</h2>
+  <p className="text-lg leading-relaxed text-muted-foreground">
+    Your paragraph text here...
+  </p>
+  
+  {/* Additional content like images, code, lists, etc. */}
+</section>
+```
+
+### 4. Styling Components
+
+#### Highlighted Box / Card
+```jsx
+<div className="p-8 rounded-2xl bg-secondary/30 border border-border/50 shadow-lg">
+  <h3 className="text-2xl font-bold mb-4">Card Title</h3>
+  <p className="text-lg">Card content here...</p>
+</div>
+```
+
+#### Bullet List
+```jsx
+<ul className="space-y-4">
+  {[
+    "First item",
+    "Second item",
+    "Third item"
+  ].map((item, index) => (
+    <li key={index} className="flex items-center gap-3">
+      <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+      <span className="text-lg">{item}</span>
+    </li>
+  ))}
+</ul>
+```
+
+#### Code Block
+```jsx
+<div className="rounded-xl bg-secondary/30 p-6 border border-border/50">
+  <pre className="language-typescript"><code>{`
+// Your code here
+const example = () => {
+  console.log("Hello world");
+};
+  `}</code></pre>
+</div>
+```
+
+#### Image
+```jsx
+<div className="my-8">
+  <img 
+    src="image-url-here.jpg" 
+    alt="Descriptive alt text" 
+    className="rounded-lg w-full"
+  />
+  <p className="text-sm text-center text-muted-foreground mt-2">Image caption (optional)</p>
+</div>
+```
+
+### 5. Blog Update Process
+
+After creating the blog file, also add it to the `blog-cards.tsx` file in the `data/blog-data/` directory by adding a new entry to the `blogCards` array:
+
+```typescript
+{
+  slug: "your-blog-slug",
+  title: "Your Blog Title",
+  excerpt: "A brief 1-2 sentence description of the blog post",
+  date: "YYYY-MM-DD",
+  tags: ["Tag1", "Tag2", "Tag3"],
+  accentColor: "from-blue-500 to-violet-500", // Choose an appropriate gradient
+  image: "URL or path to featured image",
+  readingTime: "5 min read" // Approximate reading time
+}
+```
+
+## Style and Tone Guidelines
+
+- Write in a clear, professional but conversational tone
+- Use first-person perspective when discussing personal experiences or opinions
+- Include technical details where relevant, but ensure they're accessible to readers with basic technical knowledge
+- Break up text with headings, lists, images, and code samples for readability
+- Focus on providing value through insights, tutorials, or thought leadership
+
+Remember that each blog post should have a cohesive structure with a clear introduction, main content sections, and conclusion. 
