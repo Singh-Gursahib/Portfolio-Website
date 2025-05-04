@@ -21,7 +21,7 @@ export const blogCards: BlogCard[] = [
         readingTime: "6 min read"
       },
   {
-    slug: "ureap-funding",
+    slug: "TRU-LLM-Project-UREAP",
     title: "Securing $6,000 in UREAP Funding for Privacy-Preserving LLM Research",
     excerpt: "Announcing my UREAP funding for research on privacy-preserving LLMs at TRU",
     date: "2025-04-20",
