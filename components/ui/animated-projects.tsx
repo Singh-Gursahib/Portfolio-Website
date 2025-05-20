@@ -63,10 +63,10 @@ export const AnimatedProjects = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12", className)}>
-      {/* Increased gap-x for potentially more horizontal space between image and text on md+ screens */}
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-10">
-        {/* Changed image container height to auto */}
+    <div className={cn("max-w-full md:max-w-6xl mx-auto px-3 sm:px-4 md:px-8 lg:px-12 relative z-10", className)}>
+      {/* Adjusted grid layout to prevent overlapping */}
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
+        {/* Adjusted image container width */}
         <div className="relative h-auto w-full">
           <AnimatePresence>
             {projects.map((project, index) => (
@@ -102,18 +102,17 @@ export const AnimatedProjects = ({
                 className="absolute inset-x-0 top-0 origin-bottom"
                 style={{ position: isActive(index) ? 'relative' : 'absolute' }} // Ensure only active takes space initially if needed
               >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={1000} // Wider aspect ratio
-                  height={200} // Smaller height for wider look
-                  // Removed h-full, kept w-full to fill width, height adjusts by aspect ratio
-                  className="w-full rounded-3xl object-cover object-center shadow-xl"
-                  // Add priority to potentially improve LCP for the active image
-                  priority={isActive(index)}
-                  // Added sizes attribute for better responsive optimization
-                  sizes="(max-width: 768px) 90vw, 40vw"
-                />
+                <Link href={`/projects/${project.slug}`}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={1200} // Increased width for larger display
+                    height={600} // Increased height for better aspect ratio
+                    className="w-full rounded-3xl object-cover object-center shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer"
+                    priority={isActive(index)}
+                    sizes="(max-width: 768px) 100vw, 60vw"
+                  />
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -138,13 +137,13 @@ export const AnimatedProjects = ({
               ease: "easeInOut",
             }}
           >
-            <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+            <Badge className="mb-2 sm:mb-4 bg-[#A6855D]/10 text-[#734916] hover:bg-[#A6855D]/20 border-[#A6855D]/30 text-xs sm:text-sm">
               {projects[active].category}
             </Badge>
-            <h3 className="text-2xl font-bold text-foreground mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-1 sm:mb-2">
               {projects[active].title}
             </h3>
-            <motion.p className="text-lg text-muted-foreground">
+            <motion.p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               {projects[active].excerpt.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -169,39 +168,41 @@ export const AnimatedProjects = ({
                 </motion.span>
               ))}
             </motion.p>
-            <div className="flex flex-wrap gap-2 mt-6">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-4 sm:mt-6">
               {projects[active].tags.map((tag, i) => (
                 <Badge
                   key={i}
                   variant="secondary"
-                  className="bg-secondary/50 hover:bg-secondary/70"
+                  className="bg-[#F2CA99]/30 hover:bg-[#F2CA99]/50 text-[#734916] border-[#A6855D]/20 text-xs sm:text-sm py-0.5 px-2 sm:py-1 sm:px-2.5"
                 >
                   {tag}
                 </Badge>
               ))}
             </div>
-            <div className="mt-8">
-              <Link
-                href={`/projects/${projects[active].slug}`}
-                className="text-primary hover:text-primary/80 font-medium"
-              >
-                View Project Details →
-              </Link>
-            </div>
+            
           </motion.div>
           {/* Increased top padding here for more space */}
-          <div className="flex gap-4 pt-16">
+          <div className="flex items-center gap-2 sm:gap-4 pt-8 sm:pt-12 md:pt-16">
             <button
               onClick={handlePrev}
-              className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center group/button hover:bg-secondary/80 transition-colors"
+              className="h-10 w-10 rounded-full bg-[#F2CA99]/30 dark:bg-[#734916]/30 flex items-center justify-center group/button hover:bg-[#A6855D]/40 dark:hover:bg-[#A6855D]/30 transition-colors border border-[#A6855D]/20 dark:border-[#A6855D]/30 shadow-sm"
             >
-              <ArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
+              <ArrowLeft className="h-5 w-5 text-[#734916] dark:text-[#F2CA99] group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
+            
+            <Link
+              href={`/projects/${projects[active].slug}`}
+              className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#734916] dark:bg-[#A6855D] text-[#F2CA99] dark:text-[#00010D] hover:bg-[#A6855D] dark:hover:bg-[#734916]/90 transition-all duration-300 text-xs sm:text-sm font-medium flex items-center gap-1.5 sm:gap-2 shadow-sm hover:shadow-md border border-[#A6855D]/30"
+            >
+              View Project Details
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            
             <button
               onClick={handleNext}
-              className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center group/button hover:bg-secondary/80 transition-colors"
+              className="h-10 w-10 rounded-full bg-[#F2CA99]/30 dark:bg-[#734916]/30 flex items-center justify-center group/button hover:bg-[#A6855D]/40 dark:hover:bg-[#A6855D]/30 transition-colors border border-[#A6855D]/20 dark:border-[#A6855D]/30 shadow-sm"
             >
-              <ArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
+              <ArrowRight className="h-5 w-5 text-[#734916] dark:text-[#F2CA99] group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
           </div>
         </div>

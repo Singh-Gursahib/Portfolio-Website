@@ -34,4 +34,4 @@ export const projectCards: ProjectCard[] = [
   }
 ];
 
-export const categories = ["All", "Gen AI", "Web Apps", "Mobile Apps", "ML/DL"] as const; 
+export const categories = ["All", "Gen AI", "Web Apps", "Mobile Apps"] as const; 

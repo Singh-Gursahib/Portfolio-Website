@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 :root {
+  /* Luxury Color Palette */
+  --luxury-dark: #00010D;
+  --luxury-gold: #734916;
+  --luxury-bronze: #A6855D;
+  --luxury-cream: #F2CA99;
+  --luxury-black: #0D0D0D;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -26,62 +32,62 @@
 /* base layer */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 221 83% 53%;
-    --primary-rgb: 59, 130, 246;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 221 70% 95%;
-    --accent-foreground: 221 83% 53%;
+    --background: 39 37% 98%;
+    --foreground: 240 10% 4%;
+    --card: 39 37% 98%;
+    --card-foreground: 240 10% 4%;
+    --popover: 39 37% 98%;
+    --popover-foreground: 240 10% 4%;
+    --primary: 35 69% 27%;
+    --primary-rgb: 115, 73, 22;
+    --primary-foreground: 39 37% 98%;
+    --secondary: 35 30% 95%;
+    --secondary-foreground: 35 69% 27%;
+    --muted: 35 20% 95%;
+    --muted-foreground: 35 30% 40%;
+    --accent: 35 30% 90%;
+    --accent-foreground: 35 69% 27%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 221 83% 53%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --destructive-foreground: 39 37% 98%;
+    --border: 35 30% 90%;
+    --input: 35 30% 90%;
+    --ring: 35 69% 27%;
+    --chart-1: 35 69% 27%;
+    --chart-2: 35 30% 51%;
+    --chart-3: 39 37% 77%;
+    --chart-4: 240 30% 10%;
+    --chart-5: 240 10% 4%;
     --radius: 0.5rem;
     
-    --surface-glass: rgba(255, 255, 255, 0.15);
+    --surface-glass: rgba(166, 133, 93, 0.1);
   }
   
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 0 0% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 217 91% 60%;
-    --primary-rgb: 59, 130, 246;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+    --background: 240 92% 4%;
+    --foreground: 39 37% 95%;
+    --card: 240 92% 4%;
+    --card-foreground: 39 37% 95%;
+    --popover: 240 92% 4%;
+    --popover-foreground: 39 37% 95%;
+    --primary: 35 69% 27%;
+    --primary-rgb: 115, 73, 22;
+    --primary-foreground: 39 37% 95%;
+    --secondary: 35 30% 51%;
+    --secondary-foreground: 39 37% 95%;
+    --muted: 240 30% 10%;
+    --muted-foreground: 35 20% 75%;
+    --accent: 35 30% 51%;
+    --accent-foreground: 39 37% 95%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 224 76% 48%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --destructive-foreground: 39 37% 95%;
+    --border: 35 30% 20%;
+    --input: 35 30% 20%;
+    --ring: 35 69% 27%;
+    --chart-1: 35 69% 27%;
+    --chart-2: 35 30% 51%;
+    --chart-3: 39 37% 77%;
+    --chart-4: 240 30% 10%;
+    --chart-5: 240 10% 4%;
     
     --surface-glass: rgba(0, 0, 0, 0.15);
   }
@@ -102,6 +108,15 @@
   
   .font-sans {
     font-family: var(--font-inter);
+  }
+  
+  /* Custom prose styling for project and blog pages */
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply font-sora text-[#734916] dark:text-[#F2CA99];
+  }
+  
+  .prose a {
+    @apply text-[#734916] dark:text-[#A6855D] no-underline hover:underline;
   }
 }
 
@@ -150,4 +165,23 @@
 
 .animate-aurora {
   animation: aurora 20s ease infinite;
+}
+
+/* Add padding to body for fixed navbar on mobile */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* Increased padding for navbar height */
+  }
+  
+  /* Ensure content doesn't get hidden under the navbar */
+  section:first-of-type,
+  .container:first-of-type {
+    padding-top: 1.5rem;
+  }
+  
+  /* Additional spacing for hero section */
+  .min-h-screen {
+    min-height: calc(100vh - 70px);
+    padding-top: 2rem;
+  }
 }

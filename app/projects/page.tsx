@@ -46,7 +46,8 @@ export default function ProjectsPage() {
         </div>
         
         <Tabs defaultValue="All" className="w-full" onValueChange={setActiveCategory}>
-          <div className="flex justify-center mb-6">
+          {/* Tab list only visible on larger screens */}
+          <div className="hidden md:flex justify-center mb-6">
             <TabsList className="h-14 p-1.5 bg-background/50 backdrop-blur-sm border border-border/50 rounded-full shadow-lg">
               {categories.map((category) => (
                 <TabsTrigger
@@ -68,6 +69,19 @@ export default function ProjectsPage() {
                 </TabsTrigger>
               ))}
             </TabsList>
+          </div>
+          
+          {/* Mobile dropdown selector instead of tabs */}
+          <div className="md:hidden mb-6">
+            <select 
+              className="w-full p-3 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 shadow-md text-foreground"
+              value={activeCategory}
+              onChange={(e) => setActiveCategory(e.target.value)}
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>{category}</option>
+              ))}
+            </select>
           </div>
           
           <TabsContent value={activeCategory} className="mt-6">

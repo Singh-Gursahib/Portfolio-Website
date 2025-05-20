@@ -40,20 +40,20 @@ export function Nav() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4"
+        className="fixed top-0 left-0 right-0 z-50 flex md:justify-center p-4 bg-[#F2CA99]/10 dark:bg-[#00010D]/40 md:bg-transparent md:dark:bg-transparent"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
         <motion.nav 
           className={cn(
-            "flex items-center gap-1 px-4 py-2 rounded-full",
-            "bg-white/15 dark:bg-black/15 backdrop-blur-lg border border-white/20 dark:border-white/10",
-            "shadow-lg shadow-black/5 dark:shadow-white/5",
-            isScrolled && "bg-white/30 dark:bg-black/30"
+            "flex items-center justify-between w-full md:w-auto gap-1 px-4 py-2 md:rounded-full",
+            "md:bg-[#F2CA99]/10 md:dark:bg-[#00010D]/40 backdrop-blur-lg md:border md:border-[#A6855D]/20 md:dark:border-[#734916]/30",
+            "md:shadow-lg md:shadow-[#734916]/5 md:dark:shadow-[#A6855D]/5",
+            isScrolled && "md:bg-[#F2CA99]/20 md:dark:bg-[#00010D]/60 md:border-[#A6855D]/30 md:dark:border-[#734916]/40"
           )}
           whileHover={{
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 8px 32px rgba(115, 73, 22, 0.1)",
           }}
         >
           {/* Desktop Navigation */}
@@ -70,13 +70,13 @@ export function Nav() {
                   onClick={link.href === "/#contact" ? handleContactClick : undefined}
                   className={cn(
                     "relative px-4 py-2 text-sm font-medium rounded-full transition-colors",
-                    "hover:text-primary",
-                    isActive ? "text-primary" : "text-muted-foreground"
+                    "hover:text-[#734916] dark:hover:text-[#A6855D]",
+                    isActive ? "text-[#734916] dark:text-[#A6855D]" : "text-muted-foreground"
                   )}
                 >
                   {isActive && (
                     <motion.span
-                      className="absolute inset-0 rounded-full bg-primary/10"
+                      className="absolute inset-0 rounded-full bg-[#A6855D]/15 dark:bg-[#A6855D]/20"
                       layoutId="nav-indicator"
                       transition={{
                         type: "spring",
@@ -95,13 +95,13 @@ export function Nav() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden bg-[#F2CA99]/20 hover:bg-[#F2CA99]/30 dark:bg-[#734916]/20 dark:hover:bg-[#734916]/30 border border-[#A6855D]/20 dark:border-[#734916]/30"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5 text-[#734916] dark:text-[#F2CA99]" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-5 w-5 text-[#734916] dark:text-[#F2CA99]" />
             )}
           </Button>
 
@@ -117,9 +117,9 @@ export function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-20 z-40 md:hidden"
+            className="fixed inset-x-0 top-16 z-40 md:hidden"
           >
-            <div className="mx-4 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-lg overflow-hidden">
+            <div className="mx-4 rounded-2xl bg-[#F2CA99]/10 dark:bg-[#00010D]/80 backdrop-blur-lg border border-[#A6855D]/20 dark:border-[#734916]/30 shadow-lg overflow-hidden">
               {NAVIGATION_LINKS.map((link) => {
                 const isActive = pathname === link.href || 
                                 (pathname === "/" && link.href === "/") ||
@@ -137,8 +137,8 @@ export function Nav() {
                     }}
                     className={cn(
                       "block px-4 py-3 text-sm font-medium transition-colors",
-                      "hover:bg-gray-100 dark:hover:bg-gray-800",
-                      isActive ? "text-primary" : "text-muted-foreground"
+                      "hover:bg-[#F2CA99]/20 dark:hover:bg-[#734916]/20",
+                      isActive ? "text-[#734916] dark:text-[#A6855D]" : "text-muted-foreground"
                     )}
                   >
                     {link.title}

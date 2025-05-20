@@ -23,7 +23,7 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="relative w-9 h-9 rounded-full bg-background/10 backdrop-blur-sm border border-border/30"
+      className="relative w-9 h-9 rounded-full bg-[#F2CA99]/10 backdrop-blur-sm border border-[#A6855D]/30 hover:bg-[#F2CA99]/20 hover:border-[#A6855D]/50"
     >
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
@@ -33,9 +33,9 @@ export function ThemeToggle() {
         className="absolute inset-0 flex items-center justify-center"
       >
         {theme === "dark" ? (
-          <Sun className="h-4 w-4 text-yellow-300" />
+          <Sun className="h-4 w-4 text-[#F2CA99]" />
         ) : (
-          <Moon className="h-4 w-4 text-blue-500" />
+          <Moon className="h-4 w-4 text-[#734916]" />
         )}
       </motion.div>
     </Button>

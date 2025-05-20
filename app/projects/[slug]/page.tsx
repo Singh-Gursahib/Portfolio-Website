@@ -83,7 +83,7 @@ export default async function ProjectPage({
         <div className="flex flex-col gap-4">
           <div>
             <Badge className="mb-2 text-xs">{project.category}</Badge>
-            <h1 className="text-3xl md:text-4xl font-bold font-sora">{project.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold font-sora text-[#734916] dark:text-[#F2CA99]">{project.title}</h1>
           </div>
           
           <div className="flex flex-wrap items-center gap-3 mt-2">
@@ -121,13 +121,13 @@ export default async function ProjectPage({
         {tocSections.length > 0 && (
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-4">
-              <h2 className="text-xl font-bold font-sora">Table of Contents</h2>
+              <h2 className="text-xl font-bold font-sora text-[#734916] dark:text-[#F2CA99]">Table of Contents</h2>
               <nav className="space-y-2 text-sm">
                 {tocSections.map((section) => (
                   <a 
                     key={section.id}
                     href={`#${section.id}`} 
-                    className="block text-muted-foreground hover:text-primary transition-colors"
+                    className="block text-muted-foreground hover:text-[#734916] dark:hover:text-[#A6855D] transition-colors"
                   >
                     {section.title}
                   </a>
@@ -138,7 +138,7 @@ export default async function ProjectPage({
         )}
 
         {/* Main Content */}
-        <article className={`prose prose-sm md:prose-base lg:prose-lg dark:prose-invert max-w-none ${!tocSections.length ? 'lg:col-span-2' : ''}`}>
+        <article className={`prose prose-sm md:prose-base lg:prose-lg dark:prose-invert max-w-none ${!tocSections.length ? 'lg:col-span-2' : ''} prose-headings:font-sora prose-headings:font-bold prose-h2:text-[#734916] prose-h2:dark:text-[#F2CA99] prose-h3:text-[#734916] prose-h3:dark:text-[#F2CA99] prose-h4:text-[#734916] prose-h4:dark:text-[#F2CA99]`}>
           <ProjectContent />
         </article>
       </div>
