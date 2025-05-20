@@ -93,8 +93,8 @@ export function ContactSection() {
                 <div className="flex justify-center items-center h-[120px]">
                   <GooeyText
                     texts={["Think", "Code", "Build", "Impact"]}
-                    morphTime={1.5}
-                    cooldownTime={2.5}
+                    morphTime={0.8}
+                    cooldownTime={1.2}
                     className="font-bold text-[#734916] dark:text-[#F2CA99] font-sora tracking-tight"
                     textClassName="text-5xl md:text-6xl lg:text-7xl"
                   />
