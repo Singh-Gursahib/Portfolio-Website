@@ -22,7 +22,24 @@ export const projectCards: ProjectCard[] = [
     excerpt: "Led development of an award-winning AI platform enhancing construction safety (PPE detection), data access (SQL chatbot), and task management (AI agents).",
     category: "Gen AI",
     tags: ["AI", "Computer Vision", "NLP", "SQL", "React", "TypeScript", "Award Winner"],
-    image: "/assets/projects/acres/acres-welcome-screen.png" 
+    image: "/assets/projects/acres/acres-welcome-screen.png"
+  },
+  {
+    slug: "alphasage-ai",
+    title: "AlphaSage AI: AI-Powered Trading & Investment Platform",
+    excerpt: "An AI-driven platform for advanced market analysis, Python-based strategy backtesting, and intelligent report generation using Gemini & LLaMA.",
+    category: "Gen AI",
+    tags: [
+      "FinTech",
+      "TradingView",
+      "Yahoo Finance API",
+      "Google Gemini",
+      "Groq",
+      "LLaMA",
+      "AI",
+      "Backtesting",
+    ],
+    image: "/assets/projects/alphasage-ai/landing-page.png"
   },
   {
     slug: "lifelens", // Matches the filename lifelens.tsx
@@ -30,7 +47,7 @@ export const projectCards: ProjectCard[] = [
     excerpt: "An intelligent journaling app developed for an HCI course, featuring heatmaps, Markdown editing, and AI-driven insights, OCR, and voice input.",
     category: "Web Apps", // Consistent with metadata
     tags: ["React", "TypeScript", "AI", "HCI", "Frontend", "Data Visualization"], // Consistent with metadata
-    image: "/assets/projects/lifelens/lifelens-dashboard-overview.png" 
+    image: "/assets/projects/lifelens/lifelens-dashboard-overview.png"
   }
 ];
 
