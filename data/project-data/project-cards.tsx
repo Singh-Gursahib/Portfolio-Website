@@ -48,6 +48,24 @@ export const projectCards: ProjectCard[] = [
     category: "Web Apps", // Consistent with metadata
     tags: ["React", "TypeScript", "AI", "HCI", "Frontend", "Data Visualization"], // Consistent with metadata
     image: "/assets/projects/lifelens/lifelens-dashboard-overview.png"
+  },
+  {
+    slug: "aura-robotics",
+    title: "AURA: Vision-Controlled IoT-Enabled Robotic Arm",
+    excerpt: "A groundbreaking no-code robotic arm that democratizes industrial automation. Using computer vision and AI, workers can control precision robots without programming knowledge.",
+    category: "ML/DL",
+    tags: [
+      "Robotics",
+      "IoT",
+      "Computer Vision",
+      "MediaPipe",
+      "GPT-4o-mini",
+      "Arduino",
+      "Firebase",
+      "AI",
+      "Accessibility",
+    ],
+    image: "/assets/projects/aura/aura-hero-shot.png"
   }
 ];
 
