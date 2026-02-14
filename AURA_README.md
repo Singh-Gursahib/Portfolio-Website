@@ -4,13 +4,13 @@
 
 ## 🚀 Overview
 
-**AURA** is a breakthrough no-code robotics system that democratizes industrial automation. Using computer vision and AI, workers can control precision robotic arms without any programming knowledge—just show the robot what to do.
+**AURA** is a breakthrough no-code robotics system that democratizes industrial automation. Using computer vision and AI, workers can control precision robotic arms without any programming knowledge: just show the robot what to do.
 
 ### Key Innovation
 - **No-Code Operation**: Workers control robots through hand gestures, not code
 - **Ultra-Affordable**: Prototype built for <$100, scalable to <$30 in production
 - **Industrial-Grade Safety**: Replaces dangerous manual labor with precision automation
-- **Pure Accessibility**: Designed for everyone—no PhD required
+- **Pure Accessibility**: Designed for everyone: no PhD required
 
 ## 📋 Project Status
 
