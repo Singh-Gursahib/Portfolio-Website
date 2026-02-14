@@ -44,19 +44,27 @@ export default function AuraRobotics() {
       <section id="overview" className="mb-16 scroll-m-20">
         <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
         <p className="text-lg mb-6">
-          Project <strong>AURA</strong> (Vision-Controlled IoT-Enabled Robotic Arm) represents a breakthrough in accessible robotics. During the Internet of Things course in Fall 2024 at Thompson Rivers University, our team developed a groundbreaking solution that bridges the gap between industrial-grade automation and human safety.
+          Project <strong>AURA</strong> (Vision-Controlled IoT-Enabled Robotic Arm) represents a breakthrough in accessible robotics. During the Internet of Things course in Fall 2025 at Thompson Rivers University, our team developed a groundbreaking solution that bridges the gap between industrial-grade automation and human safety.
         </p>
 
-        <div className="relative aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-border/50 shadow-lg mb-8">
-          <img
-            src="/assets/projects/aura/aura-hero-shot.png"
-            alt="AURA Robotic Arm - Hero Shot"
-            className="object-cover w-full h-full"
-          />
-          <p className="text-center text-xs italic text-muted-foreground mt-2">
-            The AURA robotic arm in action - 3D-printed design with precision control
-          </p>
+        {/* --- Video Embed Start --- */}
+        <div className="mb-8">
+           <p className="mb-4 text-lg italic text-muted-foreground">
+             Watch the video below for a complete walkthrough of the AURA robotic arm project and its capabilities. Detailed explanations follow.
+           </p>
+           <div className="relative aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-border/50 shadow-lg">
+            <iframe
+               className="absolute top-0 left-0 w-full h-full"
+               src="https://www.youtube.com/embed/UHdIT01YlOA?si=UHdIT01YlOA"
+               title="YouTube video player - AURA Robotics Project Walkthrough"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               referrerPolicy="strict-origin-when-cross-origin"
+               allowFullScreen
+            ></iframe>
+           </div>
         </div>
+        {/* --- Video Embed End --- */}
 
         <div className="mb-6">
           <h3 className="text-2xl font-bold mb-4">The Core Mission</h3>
@@ -64,7 +72,7 @@ export default function AuraRobotics() {
             In the middle of a bustling factory floor, there is a worker standing in front of a hydraulic press. Their job is simple but terrifying: reach in, place a part, pull back, and repeat. For eight hours a day, they dance with a machine that could change their life in a split second of fatigue.
           </p>
           <p>
-            This is where the inspiration for AURA began. We saw a massive disconnect in the industry—a gap I call <strong>"The Complexity Gap."</strong> On one side, you have million-dollar industrial robots that are safe but require a PhD to program. On the other, you have manual labor that is "cheap" but puts human lives at risk. Our mission was clear: build a bridge across that gap.
+            This is where the inspiration for AURA began. We saw a massive disconnect in the industry: a gap I call <strong>"The Complexity Gap."</strong> On one side, you have million-dollar industrial robots that are safe but require a PhD to program. On the other, you have manual labor that is "cheap" but puts human lives at risk. Our mission was clear: build a bridge across that gap.
           </p>
         </div>
       </section>
@@ -120,29 +128,29 @@ export default function AuraRobotics() {
         <div className="mb-8 p-6 rounded-xl bg-secondary/30 border border-border/50">
           <h3 className="text-xl font-bold mb-4">Team & Leadership</h3>
           <p className="mb-4">
-            Project AURA is the result of an exceptional collaborative effort. Developed during the Internet of Things (IoT) course in Fall 2024 at Thompson Rivers University, our team was guided by the expertise of <strong>Dr. Anthony Aighobahi</strong>.
+            Project AURA is the result of an exceptional collaborative effort. Developed during the Internet of Things (IoT) course in Fall 2025 at Thompson Rivers University, our team was guided by the expertise of <strong>Dr. Anthony Aighobahi</strong>.
           </p>
           <p className="text-lg font-semibold mb-3">Core Team Members:</p>
           <ul className="space-y-2">
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span><strong>Gursahib Singh</strong> - Lead Developer & Robotics Engineer</span>
+              <span><strong>Gursahib Singh</strong></span>
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span><strong>Deepansh Sharma</strong> - Systems Architect</span>
+              <span><strong>Deepansh Sharma</strong></span>
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span><strong>Yassh Singh</strong> - IoT Integration</span>
+              <span><strong>Yassh Singh</strong></span>
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span><strong>Noori Arora</strong> - Computer Vision Specialist</span>
+              <span><strong>Noori Arora</strong></span>
             </li>
             <li className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              <span><strong>Vansh Sethi</strong> - Control Systems Engineer</span>
+              <span><strong>Vansh Sethi</strong></span>
             </li>
           </ul>
         </div>
@@ -290,7 +298,7 @@ export default function AuraRobotics() {
         <div className="p-6 rounded-xl bg-primary/10 border border-primary/30 mb-8">
           <p className="text-lg font-semibold mb-2">🎯 The Vision</p>
           <p>
-            This represents a total democratization of robotics. We are moving toward a future where a small family-owned workshop can have the same safety standards and precision as a massive automotive plant. Safety should never be a luxury—it should be universal.
+            This represents a total democratization of robotics. We are moving toward a future where a small family-owned workshop can have the same safety standards and precision as a massive automotive plant. Safety should never be a luxury; it should be universal.
           </p>
         </div>
       </section>
@@ -300,7 +308,7 @@ export default function AuraRobotics() {
         <h2 className="text-3xl font-bold mb-6">Academic Research & International Publication</h2>
 
         <p className="mb-6">
-          Project AURA is more than just a functional prototype—it is a contribution to the scientific community. Our team has authored a <strong>full-length technical research paper</strong> detailing:
+          Project AURA is more than just a functional prototype: it is a contribution to the scientific community. Our team has authored a <strong>full-length technical research paper</strong> detailing:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -546,7 +554,7 @@ export default function AuraRobotics() {
         <div className="p-6 rounded-xl bg-primary/10 border border-primary/30 mb-8">
           <h3 className="text-xl font-bold mb-3">The Complexity Gap is Closing</h3>
           <p>
-            We are experiencing a fundamental shift in how automation will be deployed in the next decade. As AI becomes more accessible and manufacturing costs continue to drop, the barriers to industrial-grade robotics will continue to crumble. AURA is not just a product—it's a proof of concept that democratized, accessible automation is not only possible, but inevitable.
+            We are experiencing a fundamental shift in how automation will be deployed in the next decade. As AI becomes more accessible and manufacturing costs continue to drop, the barriers to industrial-grade robotics will continue to crumble. AURA is not just a product; it's a proof of concept that democratized, accessible automation is not only possible, but inevitable.
           </p>
           <p className="mt-4 font-semibold">
             We're the ones holding the door open.
