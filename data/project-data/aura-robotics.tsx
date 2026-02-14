@@ -50,7 +50,7 @@ export default function AuraRobotics() {
         {/* --- Video Embed Start --- */}
         <div className="mb-8">
            <p className="mb-4 text-lg italic text-muted-foreground">
-             Watch the video below for a complete walkthrough of the AURA robotic arm project and its capabilities. Detailed explanations follow.
+             Watch the video below for a quick walkthrough of the AURA robotic arm project and its capabilities. Detailed explanations follow.
            </p>
            <div className="relative aspect-video w-full max-w-3xl mx-auto rounded-xl overflow-hidden border border-border/50 shadow-lg">
             <iframe
